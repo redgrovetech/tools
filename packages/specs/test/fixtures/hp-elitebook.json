@@ -1,0 +1,27 @@
+{
+  "system": { "manufacturer": "HP", "model": "HP EliteBook 840 G8 Notebook PC", "version": "", "serial": "5CG1234ABC", "uuid": "4C4C4544-0042-3510-8058-B2C04F4E3132", "sku": "3C6D5UT#ABA", "virtual": false },
+  "bios": { "vendor": "HP", "version": "T37 Ver. 01.10.00", "releaseDate": "2022-04-11" },
+  "baseboard": { "manufacturer": "HP", "model": "880D", "serial": "PKBNL028JH1234" },
+  "chassis": { "manufacturer": "HP", "type": "Notebook", "serial": "5CG1234ABC", "assetTag": "" },
+  "cpu": { "manufacturer": "Intel", "brand": "Core™ i5-1145G7", "cores": 8, "physicalCores": 4, "speed": 2.6 },
+  "mem": { "total": 17179869184 },
+  "memLayout": [
+    { "size": 8589934592, "bank": "BANK 0", "type": "DDR4", "clockSpeed": 3200, "manufacturer": "Samsung", "partNum": "M471A1K43EB1-CWE", "serialNum": "41A2B3C4" },
+    { "size": 8589934592, "bank": "BANK 2", "type": "DDR4", "clockSpeed": 3200, "manufacturer": "Samsung", "partNum": "M471A1K43EB1-CWE", "serialNum": "41A2B3C5" }
+  ],
+  "diskLayout": [
+    { "device": "\\\\.\\PHYSICALDRIVE0", "type": "NVMe", "name": "SAMSUNG MZVLB512HBJQ-000H1", "size": 512105932800, "serialNum": "S4GENX0R123456", "interfaceType": "NVMe", "firmwareRevision": "EXH7301Q", "smartStatus": "Ok" },
+    { "device": "\\\\.\\PHYSICALDRIVE1", "type": "HD", "name": "SanDisk Cruzer", "size": 16008609792, "serialNum": "4C530001230101112345", "interfaceType": "USB", "smartStatus": "unknown" }
+  ],
+  "graphics": {
+    "controllers": [{ "vendor": "Intel Corporation", "model": "Intel(R) Iris(R) Xe Graphics", "vram": 128 }],
+    "displays": [{ "resolutionX": 1920, "resolutionY": 1080, "sizeX": 31, "sizeY": 17 }]
+  },
+  "battery": { "hasBattery": true, "cycleCount": 212, "designedCapacity": 53000, "maxCapacity": 44520, "capacityUnit": "mWh" },
+  "network": [
+    { "iface": "Wi-Fi", "ifaceName": "Intel(R) Wi-Fi 6 AX201 160MHz", "type": "wireless", "mac": "a0:b1:c2:d3:e4:f5", "internal": false, "virtual": false },
+    { "iface": "Ethernet", "ifaceName": "Intel(R) Ethernet Connection (13) I219-LM", "type": "wired", "mac": "a0:b1:c2:d3:e4:f6", "internal": false, "virtual": false },
+    { "iface": "vEthernet (WSL)", "ifaceName": "Hyper-V Virtual Ethernet Adapter", "type": "wired", "mac": "00:15:5d:00:00:01", "internal": false, "virtual": true }
+  ],
+  "osInfo": { "platform": "Windows", "distro": "Microsoft Windows 11 Pro", "release": "10.0.22631", "arch": "x64", "serial": "00330-80000-00000-AA123" }
+}

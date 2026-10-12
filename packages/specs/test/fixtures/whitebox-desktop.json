@@ -1,0 +1,18 @@
+{
+  "system": { "manufacturer": "System manufacturer", "model": "System Product Name", "serial": "System Serial Number", "uuid": "03000200-0400-0500-0006-000700080009", "sku": "SKU", "virtual": false },
+  "bios": { "vendor": "American Megatrends Inc.", "version": "2801", "releaseDate": "2021-06-03" },
+  "baseboard": { "manufacturer": "ASUSTeK COMPUTER INC.", "model": "PRIME B450M-A", "serial": "Default string" },
+  "chassis": { "type": "Desktop", "serial": "Default string", "assetTag": "Default string" },
+  "cpu": { "manufacturer": "AMD", "brand": "Ryzen 5 3600", "cores": 12, "physicalCores": 6, "speed": 3.6 },
+  "mem": { "total": 17179869184 },
+  "memLayout": [{ "size": 17179869184, "bank": "P0 CHANNEL A", "type": "DDR4", "clockSpeed": 2666, "manufacturer": "Unknown", "partNum": "", "serialNum": "00000000" }],
+  "diskLayout": [
+    { "device": "/dev/sda", "type": "HD", "name": "ST1000DM010-2EP102", "size": 1000204886016, "serialNum": "Z9A1B2C3", "interfaceType": "SATA", "firmwareRevision": "CC43", "smartStatus": "Ok" },
+    { "device": "/dev/sdb", "type": "SSD", "name": "CT500MX500SSD1", "size": 500107862016, "serialNum": "2034E4A1B2C3", "interfaceType": "SATA", "smartStatus": "Predicted Failure" },
+    { "device": "/dev/sdc", "type": "HD", "name": "Mystery drive", "size": 0, "serialNum": "" }
+  ],
+  "graphics": { "controllers": [], "displays": [] },
+  "battery": { "hasBattery": false },
+  "network": [{ "iface": "enp3s0", "type": "wired", "mac": "04:d4:c4:11:22:33", "internal": false, "virtual": false }],
+  "osInfo": { "platform": "linux", "distro": "Ubuntu", "release": "24.04 LTS", "arch": "x64", "serial": "8f3a" }
+}

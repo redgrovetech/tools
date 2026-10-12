@@ -1,0 +1,9 @@
+{
+  "name": "redgrove-tools",
+  "private": true,
+  "workspaces": ["packages/*"],
+  "scripts": {
+    "test": "bun test",
+    "typecheck": "tsc -p packages/specs --noEmit"
+  }
+}
