@@ -1,0 +1,60 @@
+name: CI
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: oven-sh/setup-bun@v2
+        with:
+          bun-version: 1.4.2
+      - run: bun install --frozen-lockfile
+      - run: bun run typecheck
+      - run: bun test
+
+  build-specs:
+    needs: test
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: oven-sh/setup-bun@v2
+        with:
+          bun-version: 1.4.2
+      - run: bun install --frozen-lockfile
+      - name: Cross-compile specs for every target
+        working-directory: packages/specs
+        run: bun run build
+      - name: Smoke test the Linux x64 binary
+        working-directory: packages/specs
+        run: |
+          ./dist/specs-*-linux-x64 --version
+          ./dist/specs-*-linux-x64 --out record.json || [ $? -eq 1 ]
+          bun -e "const r = await Bun.file('record.json').json(); if (r.kind !== 'specs') throw new Error('bad record')"
+      - uses: actions/upload-artifact@v4
+        with:
+          name: specs-binaries
+          path: packages/specs/dist/
+
+  smoke-specs:
+    needs: test
+    strategy:
+      matrix:
+        os: [windows-latest, macos-latest, ubuntu-24.04-arm]
+    runs-on: ${{ matrix.os }}
+    steps:
+      - uses: actions/checkout@v4
+      - uses: oven-sh/setup-bun@v2
+        with:
+          bun-version: 1.4.2
+      - run: bun install --frozen-lockfile
+      - name: Run specs on a real runner
+        working-directory: packages/specs
+        shell: bash
+        run: |
+          bun src/cli.ts --out record.json || [ $? -eq 1 ]
+          cat record.json

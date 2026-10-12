@@ -1,0 +1,22 @@
+{
+  "schemaVersion": "1.0",
+  "recordId": "0f8b8c7e-6b1e-4d3a-9a51-2c7f5b9d1e44",
+  "device": { "id": "<sha256>", "serialNumber": "5CG1234ABC", "systemUuid": "4c4c4544-0042-3510-8058-b2c04f4e3132", "manufacturer": "HP", "model": "EliteBook 840 G8", "chassisType": "Notebook" },
+  "tool": { "name": "erase", "version": "0.1.0", "os": "linux", "arch": "x64", "bootEnv": "usb-live" },
+  "run": { "startedAt": "2026-10-13T14:02:11Z", "finishedAt": "2026-10-13T14:05:40Z", "status": "pass", "operator": "tech-03", "station": "bench-2" },
+  "kind": "erase",
+  "payload": {
+    "standard": "NIST SP 800-88 Rev. 1",
+    "drives": [
+      {
+        "drive": { "model": "SAMSUNG MZVLB512HBJQ", "serial": "S4GENX0R123456", "interface": "nvme", "mediaType": "ssd", "capacityBytes": 512110190592 },
+        "sanitizationLevel": "purge",
+        "method": "nvme-sanitize-crypto",
+        "startedAt": "2026-10-13T14:02:30Z",
+        "finishedAt": "2026-10-13T14:03:02Z",
+        "verification": { "method": "sample", "sampledPercent": 10, "result": "pass" },
+        "result": "erased"
+      }
+    ]
+  }
+}
